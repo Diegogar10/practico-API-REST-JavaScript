@@ -204,7 +204,8 @@ button {
   margin-right: 8px;
 }
 
-.trendingPreview-movieList .movie-container .movie-img {
+.trendingPreview-movieList .movie-container .movie-img,
+.trendingPreview-movieList .movie-container .movie-loading {
   height: 225px;
   min-height: 225px;
   max-height: 225px;
@@ -213,7 +214,39 @@ button {
   max-width: 150px;
 }
 
+.trendingPreview-movieList .movie-container .movie-loading {
+  background-color: #00000020;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.movie-loading::after {
+  position: absolute;
+  content: '';
+  background: linear-gradient(to top, #00000000 0%, #00000020 50%, #00000000 100% );
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 80px;
+  transform: rotate(45deg);
+  animation: loading 2.5s infinite linear;
+}
 
+
+@keyframes loading {
+0%{
+  top: 10px;
+  right: -275px;
+}
+100%{
+  top: 173px;
+  right: 75px;
+}
+/*100%{
+  top: 10px;
+  right: -275px;
+}*/
+}
 /* Categories */
 .category-container {
   width: 45%;
